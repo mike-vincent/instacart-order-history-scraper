@@ -1,0 +1,13 @@
+Source: instacart-order-history-fetch
+Section: utils
+Priority: optional
+Maintainer: Mike Vincent <michael.thomas.vincent@gmail.com>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.5.0
+Homepage: https://mike-vincent.github.io/instacart-order-history-fetch/
+
+Package: instacart-order-history-fetch
+Architecture: all
+Depends: python3 (>= 3.6)
+Description: Download your Instacart receipts as JSON, CSV, or text
+ Output includes order dates, totals, retailers, and full item details.

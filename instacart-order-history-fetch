@@ -13,25 +13,9 @@ import sys
 import time
 import urllib.request
 import urllib.error
-from datetime import datetime, timedelta
 
 
-def parse_instacart_date(date_str):
-    """Parse Instacart API date format."""
-    formats = [
-        '%b %d, %Y,  %I:%M %p',
-        '%b %d, %Y, %I:%M %p',
-        '%b %d, %Y',
-    ]
-    for fmt in formats:
-        try:
-            return datetime.strptime(date_str.strip(), fmt)
-        except ValueError:
-            continue
-    return None
-
-
-def fetch_orders(session_id, since=None, max_pages=100, verbose=True):
+def fetch_orders(session_id, max_orders=None, max_pages=100, verbose=True):
     """Fetch orders from Instacart API."""
 
     headers = {
@@ -65,15 +49,13 @@ def fetch_orders(session_id, since=None, max_pages=100, verbose=True):
                 break
 
             for order in orders:
-                order_date = parse_instacart_date(order.get('created_at', ''))
-
-                if since and order_date and order_date < since:
-                    if verbose:
-                        print(f'Reached cutoff date ({since.date()}).', file=sys.stderr)
-                    return all_orders
-
                 order_data = extract_order(order)
                 all_orders.append(order_data)
+
+                if max_orders and len(all_orders) >= max_orders:
+                    if verbose:
+                        print(f'Reached {max_orders} orders.', file=sys.stderr)
+                    return all_orders
 
             if verbose:
                 items = sum(len(d['items']) for o in all_orders for d in o['deliveries'])
@@ -232,10 +214,7 @@ To get your session cookie:
     parser.add_argument('--instacart-session-id', '-instacart-session-id', required=True,
                         help='Your _instacart_session_id cookie value')
 
-    date_group = parser.add_mutually_exclusive_group()
-    date_group.add_argument('--since', type=str, help='Start date (YYYY-MM-DD)')
-    date_group.add_argument('--months', type=int, help='Last N months')
-    date_group.add_argument('--days', type=int, help='Last N days')
+    parser.add_argument('--orders', '-n', type=int, help='Number of orders to fetch (default: all)')
 
     parser.add_argument('--format', '-f', choices=['csv', 'json', 'markdown', 'tsv', 'yaml'],
                         default='json', help='Output format (default: json)')
@@ -244,19 +223,7 @@ To get your session cookie:
 
     args = parser.parse_args()
 
-    since = None
-    if args.since:
-        try:
-            since = datetime.strptime(args.since, '%Y-%m-%d')
-        except ValueError:
-            print('Error: Use YYYY-MM-DD format.', file=sys.stderr)
-            sys.exit(1)
-    elif args.months:
-        since = datetime.now() - timedelta(days=args.months * 30)
-    elif args.days:
-        since = datetime.now() - timedelta(days=args.days)
-
-    orders = fetch_orders(args.instacart_session_id, since=since, verbose=not args.quiet)
+    orders = fetch_orders(args.instacart_session_id, max_orders=args.orders, verbose=not args.quiet)
 
     if not orders:
         print('No orders found.', file=sys.stderr)
