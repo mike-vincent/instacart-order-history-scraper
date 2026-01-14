@@ -1,13 +1,13 @@
 .TH INSTACART-SCRAPER 1 "January 2026" "1.0.0" "User Commands"
 .SH NAME
-instacart-scraper \- export Instacart order history
+instacart-order-history \- export Instacart order history
 .SH SYNOPSIS
-.B instacart-scraper
+.B instacart-order-history
 .RB \-\-isid
 .IR SESSION_ID
 .RI [ OPTIONS ]
 .SH DESCRIPTION
-.B instacart-scraper
+.B instacart-order-history
 exports your Instacart order history with full item details to JSON, CSV, or
 plain text. The tool uses only Python standard library with no external
 dependencies.
@@ -43,25 +43,25 @@ Show help message and exit.
 Export all orders to JSON:
 .PP
 .RS
-instacart-scraper \-\-isid "YOUR_SESSION_ID"
+instacart-order-history \-\-isid "YOUR_SESSION_ID"
 .RE
 .PP
 Export last 6 months to CSV:
 .PP
 .RS
-instacart-scraper \-\-isid "YOUR_SESSION_ID" \-\-months 6 \-f csv
+instacart-order-history \-\-isid "YOUR_SESSION_ID" \-\-months 6 \-f csv
 .RE
 .PP
 Export to file quietly:
 .PP
 .RS
-instacart-scraper \-\-isid "YOUR_SESSION_ID" \-o orders.json \-q
+instacart-order-history \-\-isid "YOUR_SESSION_ID" \-o orders.json \-q
 .RE
 .PP
 Export since specific date:
 .PP
 .RS
-instacart-scraper \-\-isid "YOUR_SESSION_ID" \-\-since 2024-01-01
+instacart-order-history \-\-isid "YOUR_SESSION_ID" \-\-since 2024-01-01
 .RE
 .SH OUTPUT FORMATS
 .TP
@@ -75,7 +75,7 @@ quantity, size, product_id.
 .B text
 Human-readable summary with totals and itemized orders.
 .SH AUTHENTICATION
-.B instacart-scraper
+.B instacart-order-history
 requires your Instacart session cookie for authentication.
 .PP
 To get the session ID:

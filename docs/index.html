@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>instacart-scraper</title>
+    <title>instacart-order-history</title>
     <style>
         :root {
             --bg: #fafafa;
@@ -108,21 +108,21 @@
     </style>
 </head>
 <body>
-    <h1>instacart-scraper</h1>
-    <p style="margin-top:-24px;margin-bottom:32px;">instacart-scraper is a command-line tool for exporting your Instacart order history.</p>
+    <h1>instacart-order-history</h1>
+    <p style="margin-top:-24px;margin-bottom:32px;">instacart-order-history is a command-line tool for exporting your Instacart order history.</p>
 
     <section>
-        <h2>What does instacart-scraper do?</h2>
-        <p>instacart-scraper exports your Instacart order history to JSON, CSV, or text. instacart-scraper outputs order dates, totals, retailers, and full item details.</p>
+        <h2>What does instacart-order-history do?</h2>
+        <p>instacart-order-history exports your Instacart order history to JSON, CSV, or text. instacart-order-history outputs order dates, totals, retailers, and full item details.</p>
     </section>
 
     <hr>
 
     <section>
-        <h2>How do I install instacart-scraper?</h2>
-        <p>You install instacart-scraper with Homebrew:</p>
-        <pre><code>brew tap mike-vincent/instacart-scraper
-brew install instacart-scraper</code></pre>
+        <h2>How do I install instacart-order-history?</h2>
+        <p>You install instacart-order-history with Homebrew:</p>
+        <pre><code>brew tap mike-vincent/instacart-order-history
+brew install instacart-order-history</code></pre>
     </section>
 
     <hr>
@@ -135,41 +135,41 @@ brew install instacart-scraper</code></pre>
     <hr>
 
     <section>
-        <h2>How do I use instacart-scraper?</h2>
-        <p>You use instacart-scraper by running it with your session cookie:</p>
-        <pre><code>instacart-scraper --isid "YOUR_SESSION_ID"</code></pre>
+        <h2>How do I use instacart-order-history?</h2>
+        <p>You use instacart-order-history by running it with your session cookie:</p>
+        <pre><code>instacart-order-history --isid "YOUR_SESSION_ID"</code></pre>
     </section>
 
     <hr>
 
     <section>
-        <h2>What are some instacart-scraper example commands?</h2>
+        <h2>What are some instacart-order-history example commands?</h2>
         <pre><code># Export all orders as JSON (default)
-instacart-scraper --isid "abc123..."
+instacart-order-history --isid "abc123..."
 
 # Export last 6 months to CSV file
-instacart-scraper --isid "abc123..." --months 6 -f csv -o groceries.csv
+instacart-order-history --isid "abc123..." --months 6 -f csv -o groceries.csv
 
 # Export last 30 days as JSON
-instacart-scraper --isid "abc123..." --days 30
+instacart-order-history --isid "abc123..." --days 30
 
 # Export orders since a specific date
-instacart-scraper --isid "abc123..." --since 2025-01-01
+instacart-order-history --isid "abc123..." --since 2025-01-01
 
 # Export as human-readable text
-instacart-scraper --isid "abc123..." -f text
+instacart-order-history --isid "abc123..." -f text
 
 # Export quietly (no progress) and pipe to jq
-instacart-scraper --isid "abc123..." -q | jq '.[0]'
+instacart-order-history --isid "abc123..." -q | jq '.[0]'
 
 # Save all orders to file
-instacart-scraper --isid "abc123..." -o all-orders.json</code></pre>
+instacart-order-history --isid "abc123..." -o all-orders.json</code></pre>
     </section>
 
     <div class="footer">
         <a href="https://www.mikevincent.dev">Mike Vincent</a>, Los Angeles<br>
         © 2026 Mike Vincent. Code licensed MIT.<br>
-        <a href="https://github.com/mike-vincent/instacart-scraper">github</a>
+        <a href="https://github.com/mike-vincent/instacart-order-history">github</a>
     </div>
 </body>
 </html>

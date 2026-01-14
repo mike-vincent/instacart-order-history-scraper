@@ -1,50 +1,50 @@
-# instacart-scraper
+# instacart-order-history
 
-## What does instacart-scraper do?
+## What does instacart-order-history do?
 
-instacart-scraper exports your Instacart order history to JSON, CSV, or text. instacart-scraper outputs order dates, totals, retailers, and full item details.
+instacart-order-history exports your Instacart order history to JSON, CSV, or text. instacart-order-history outputs order dates, totals, retailers, and full item details.
 
-## How do I install instacart-scraper?
+## How do I install instacart-order-history?
 
-Install instacart-scraper with Homebrew:
+Install instacart-order-history with Homebrew:
 
 ```
-brew tap mike-vincent/instacart-scraper
-brew install instacart-scraper
+brew tap mike-vincent/instacart-order-history
+brew install instacart-order-history
 ```
 
 ## How do I get my session cookie?
 
 Get the session cookie from your browser. Log into instacart.com, open DevTools, go to Application → Cookies, and copy the value of `_instacart_session_id`.
 
-## How do I use instacart-scraper?
+## How do I use instacart-order-history?
 
-Run instacart-scraper with your session cookie:
+Run instacart-order-history with your session cookie:
 
 ```
-instacart-scraper --isid "YOUR_SESSION_ID"
+instacart-order-history --isid "YOUR_SESSION_ID"
 ```
 
 ## Examples
 
 ```
 # Export all orders as JSON
-instacart-scraper --isid "YOUR_SESSION_ID"
+instacart-order-history --isid "YOUR_SESSION_ID"
 
 # Last 6 months as CSV
-instacart-scraper --isid "YOUR_SESSION_ID" --months 6 -f csv
+instacart-order-history --isid "YOUR_SESSION_ID" --months 6 -f csv
 
 # Last 30 days to a file
-instacart-scraper --isid "YOUR_SESSION_ID" --days 30 -o orders.json
+instacart-order-history --isid "YOUR_SESSION_ID" --days 30 -o orders.json
 
 # Since January 2024
-instacart-scraper --isid "YOUR_SESSION_ID" --since 2024-01-01
+instacart-order-history --isid "YOUR_SESSION_ID" --since 2024-01-01
 
 # Human-readable text output
-instacart-scraper --isid "YOUR_SESSION_ID" -f text
+instacart-order-history --isid "YOUR_SESSION_ID" -f text
 
 # Quiet mode (no progress output)
-instacart-scraper --isid "YOUR_SESSION_ID" -q > orders.json
+instacart-order-history --isid "YOUR_SESSION_ID" -q > orders.json
 ```
 
 ## Author
@@ -55,7 +55,7 @@ https://github.com/mike-vincent
 
 ## Source
 
-https://github.com/mike-vincent/instacart-scraper
+https://github.com/mike-vincent/instacart-order-history
 
 ## License
 
