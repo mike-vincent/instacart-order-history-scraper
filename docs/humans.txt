@@ -1,0 +1,8 @@
+/* TEAM */
+Developer: Mike Vincent
+Site: https://github.com/mike-vincent
+Location: Los Angeles, CA
+
+/* SITE */
+Software: Python 3
+Components: urllib, json, csv, argparse (stdlib only)

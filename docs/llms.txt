@@ -1,0 +1,40 @@
+# instacart-orders
+
+> Export your Instacart order history to JSON, CSV, or text.
+
+## Install
+
+```
+brew tap mike-vincent/instacart-order-history-scraper
+brew install instacart-orders
+```
+
+## Usage
+
+```
+instacart-orders --session "SESSION_COOKIE"
+instacart-orders --session "COOKIE" --months 6 --format csv
+```
+
+## Options
+
+- `--session, -s` - Instacart session cookie (required)
+- `--months N` - Last N months
+- `--days N` - Last N days
+- `--since YYYY-MM-DD` - Since date
+- `--format json|csv|text` - Output format
+- `-o FILE` - Output file
+- `-q` - Quiet mode
+
+## Author
+
+Mike Vincent
+https://github.com/mike-vincent
+
+## Source
+
+https://github.com/mike-vincent/instacart-order-history-scraper
+
+## License
+
+MIT
