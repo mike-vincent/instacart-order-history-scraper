@@ -218,7 +218,7 @@ To get your session cookie:
 
     parser.add_argument('--format', '-f', choices=['csv', 'json', 'markdown', 'tsv', 'yaml'],
                         default='json', help='Output format (default: json)')
-    parser.add_argument('--output', '-o', type=str, help='Output file')
+    parser.add_argument('--output', '-o', type=str, help='Output filename')
     parser.add_argument('--quiet', '-q', action='store_true', help='Quiet mode')
 
     args = parser.parse_args()

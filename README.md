@@ -28,7 +28,7 @@ instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" -n 10 
 --instacart-session-id   Your _instacart_session_id cookie (required)
 -n, --orders             Number of orders to fetch (default: all)
 -f, --format             csv, json, markdown, tsv, or yaml
--o, --output             Output file
+-o, --output             Output filename
 -q, --quiet              Quiet mode
 -h, --help               Show help
 ```
