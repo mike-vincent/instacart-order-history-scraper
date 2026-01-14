@@ -12,6 +12,7 @@
             --subtle: #a3a3a3;
             --pre-bg: #f5f5f5;
             --pre-border: #e5e5e5;
+            --hr: #e5e5e5;
             --shadow: rgba(0,0,0,0.04);
         }
         @media (prefers-color-scheme: dark) {
@@ -22,6 +23,7 @@
                 --subtle: #737373;
                 --pre-bg: #171717;
                 --pre-border: #262626;
+                --hr: #262626;
                 --shadow: rgba(0,0,0,0.2);
             }
         }
@@ -45,7 +47,7 @@
         h2 {
             font-size: 14px;
             font-weight: 600;
-            margin: 36px 0 10px;
+            margin: 0 0 10px;
             color: var(--fg);
         }
         p {
@@ -60,7 +62,7 @@
             border-radius: 8px;
             font-size: 13px;
             overflow-x: auto;
-            margin: 14px 0;
+            margin: 14px 0 0;
             box-shadow: 0 1px 3px var(--shadow);
         }
         code {
@@ -73,10 +75,18 @@
             border-radius: 4px;
             font-size: 12px;
         }
+        hr {
+            border: none;
+            border-top: 1px solid var(--hr);
+            margin: 32px 0;
+        }
+        section {
+            margin-bottom: 0;
+        }
         .footer {
-            margin-top: 64px;
+            margin-top: 48px;
             padding-top: 24px;
-            border-top: 1px solid var(--pre-border);
+            border-top: 1px solid var(--hr);
             font-size: 12px;
             color: var(--subtle);
             line-height: 1.8;
@@ -99,24 +109,42 @@
 </head>
 <body>
     <h1>instacart-orders</h1>
+    <p style="margin-top:-24px;margin-bottom:32px;">A command-line tool for scraping your Instacart order history.</p>
 
-    <h2>What does instacart-orders do?</h2>
-    <p>instacart-orders exports your Instacart order history to JSON, CSV, or text. instacart-orders outputs order dates, totals, retailers, and full item details.</p>
+    <section>
+        <h2>What does instacart-orders do?</h2>
+        <p>instacart-orders exports your Instacart order history to JSON, CSV, or text. instacart-orders outputs order dates, totals, retailers, and full item details.</p>
+    </section>
 
-    <h2>How do I install instacart-orders?</h2>
-    <p>Install instacart-orders with Homebrew:</p>
-    <pre><code>brew tap mike-vincent/instacart-order-history-scraper
+    <hr>
+
+    <section>
+        <h2>How do I install instacart-orders?</h2>
+        <p>You install instacart-orders with Homebrew:</p>
+        <pre><code>brew tap mike-vincent/instacart-order-history-scraper
 brew install instacart-orders</code></pre>
+    </section>
 
-    <h2>How do I get my session cookie?</h2>
-    <p>Get the session cookie from your browser. Log into instacart.com, open DevTools, go to Application → Cookies, and copy the value of <code>_instacart_session_id</code>.</p>
+    <hr>
 
-    <h2>How do I use instacart-orders?</h2>
-    <p>Run instacart-orders with your session cookie:</p>
-    <pre><code>instacart-orders -s "YOUR_COOKIE"</code></pre>
+    <section>
+        <h2>How do I get my session cookie?</h2>
+        <p>You get the session cookie from your browser. Log into instacart.com, open DevTools, go to Application → Cookies, and copy the value of <code>_instacart_session_id</code>.</p>
+    </section>
 
-    <h2>Examples</h2>
-    <pre><code># Export all orders as JSON
+    <hr>
+
+    <section>
+        <h2>How do I use instacart-orders?</h2>
+        <p>You use instacart-orders by running it with your session cookie:</p>
+        <pre><code>instacart-orders -s "YOUR_COOKIE"</code></pre>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Examples</h2>
+        <pre><code># Export all orders as JSON
 instacart-orders -s "COOKIE"
 
 # Last 6 months as CSV
@@ -133,6 +161,7 @@ instacart-orders -s "COOKIE" -f text
 
 # Quiet mode (no progress output)
 instacart-orders -s "COOKIE" -q > orders.json</code></pre>
+    </section>
 
     <div class="footer">
         <a href="https://www.mikevincent.dev">Mike Vincent</a>, Los Angeles<br>
