@@ -2,7 +2,7 @@
 
 ## What does instacart-order-history-fetch do?
 
-instacart-order-history-fetch exports your Instacart order history to JSON, CSV, or text. instacart-order-history-fetch outputs order dates, totals, retailers, and full item details.
+instacart-order-history-fetch fetches your Instacart order history to JSON, CSV, or text. instacart-order-history-fetch outputs order dates, totals, retailers, and full item details.
 
 ## How do I install instacart-order-history-fetch?
 
@@ -28,7 +28,7 @@ instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID"
 ## Examples
 
 ```
-# Export all orders as JSON
+# Fetch all orders as JSON
 instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID"
 
 # Last 6 months as CSV

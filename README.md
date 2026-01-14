@@ -1,6 +1,6 @@
 # instacart-order-history-fetch
 
-instacart-order-history-fetch is a command-line tool for exporting your Instacart order history.
+instacart-order-history-fetch is a command-line tool for fetching your Instacart order history.
 
 ## Install
 
