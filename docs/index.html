@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
     <title>instacart-order-history-download</title>
     <style>
         :root {
@@ -20,12 +21,15 @@
             min-height: 100%;
         }
         body {
+            background: transparent;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             max-width: 600px;
             margin: 0 auto;
             padding: 80px 24px;
-            background: #0a0a0a;
-            min-height: 100vh;
             color: var(--fg);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
@@ -98,47 +102,49 @@
     </style>
 </head>
 <body>
-    <h1>instacart-order-history-download</h1>
-    <p style="margin-top:-24px;margin-bottom:32px;">A command-line tool to download your Instacart order history.</p>
+    <div class="container">
+        <h1>instacart-order-history-download</h1>
+        <p style="margin-top:-24px;margin-bottom:32px;">A command-line tool to download your Instacart order history.</p>
 
-    <section>
-        <h2>1. Install</h2>
-        <pre><code>pip install instacart-order-history-download</code></pre>
-    </section>
+        <section>
+            <h2>1. Install</h2>
+            <pre><code>pip install instacart-order-history-download</code></pre>
+        </section>
 
-    <section>
-        <h2>2. Find Your Session ID</h2>
-        <p>Log into instacart.com, open DevTools → Cookies, and copy <code>_instacart_session_id</code>.</p>
-    </section>
+        <section>
+            <h2>2. Find Your Session ID</h2>
+            <p>Log into instacart.com, open DevTools → Cookies, and copy <code>_instacart_session_id</code>.</p>
+        </section>
 
-    <section>
-        <h2>3. Download Your Receipts</h2>
-        <pre><code>instacart-order-history-download \
+        <section>
+            <h2>3. Download Your Receipts</h2>
+            <pre><code>instacart-order-history-download \
   --instacart-session-id "YOUR_SESSION_ID"</code></pre>
-    </section>
+        </section>
 
-    <hr>
+        <hr>
 
-    <section>
-        <h2>Build from Source</h2>
-        <pre><code>git clone https://github.com/mike-vincent/instacart-order-history-download.git
+        <section>
+            <h2>Build from Source</h2>
+            <pre><code>git clone https://github.com/mike-vincent/instacart-order-history-download.git
 cd instacart-order-history-download
 python3 instacart_order_history_download.py --help</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <h2>Homebrew</h2>
-        <pre><code>brew install mike-vincent/tap/instacart-order-history-download</code></pre>
-    </section>
+        <section>
+            <h2>Homebrew</h2>
+            <pre><code>brew install mike-vincent/tap/instacart-order-history-download</code></pre>
+        </section>
 
-    <section>
-        <h2>MacPorts</h2>
-        <pre><code>sudo port install instacart-order-history-download</code></pre>
-    </section>
+        <section>
+            <h2>MacPorts</h2>
+            <pre><code>sudo port install instacart-order-history-download</code></pre>
+        </section>
 
-    <div class="footer">
-        Not affiliated with Maplebear Inc. d/b/a Instacart.<br><br>
-        Copyright © 2026 <a href="https://www.mikevincent.dev">Mike Vincent</a>, Los Angeles, Calif. All Rights Reserved.
+        <div class="footer">
+            Not affiliated with Maplebear Inc. d/b/a Instacart.<br><br>
+            Copyright © 2026 <a href="https://www.mikevincent.dev">Mike Vincent</a>, Los Angeles, Calif. All Rights Reserved.
+        </div>
     </div>
 </body>
 </html>
