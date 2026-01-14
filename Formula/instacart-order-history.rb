@@ -19,6 +19,6 @@ class InstacartOrderHistory < Formula
   end
 
   test do
-    assert_match "session-id", shell_output("#{bin}/instacart-order-history --help")
+    assert_match "instacart-session-id", shell_output("#{bin}/instacart-order-history --help")
   end
 end

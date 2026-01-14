@@ -137,7 +137,7 @@ brew install instacart-order-history</code></pre>
     <section>
         <h2>How do I use instacart-order-history?</h2>
         <p>You use instacart-order-history by running it with your session cookie:</p>
-        <pre><code>instacart-order-history --session-id "YOUR_SESSION_ID"</code></pre>
+        <pre><code>instacart-order-history --instacart-session-id "YOUR_SESSION_ID"</code></pre>
     </section>
 
     <hr>
@@ -145,13 +145,13 @@ brew install instacart-order-history</code></pre>
     <section>
         <h2>What are some instacart-order-history example commands?</h2>
         <pre><code># Export all orders as JSON
-instacart-order-history --session-id "abc123..."
+instacart-order-history --instacart-session-id "abc123..."
 
 # Export last 6 months to CSV
-instacart-order-history --session-id "abc123..." --months 6 -f csv
+instacart-order-history --instacart-session-id "abc123..." --months 6 -f csv
 
 # Export to file
-instacart-order-history --session-id "abc123..." -o orders.json</code></pre>
+instacart-order-history --instacart-session-id "abc123..." -o orders.json</code></pre>
     </section>
 
     <div class="footer">
