@@ -1,50 +1,50 @@
-# instacart-order-history-fetch
+# instacart-order-history-download
 
-## What does instacart-order-history-fetch do?
+## What does instacart-order-history-download do?
 
-instacart-order-history-fetch gets your Instacart order history to JSON, CSV, or text. instacart-order-history-fetch outputs order dates, totals, retailers, and full item details.
+instacart-order-history-download gets your Instacart order history to JSON, CSV, or text. instacart-order-history-download outputs order dates, totals, retailers, and full item details.
 
-## How do I install instacart-order-history-fetch?
+## How do I install instacart-order-history-download?
 
-Install instacart-order-history-fetch with Homebrew:
+Install instacart-order-history-download with Homebrew:
 
 ```
-brew tap mike-vincent/instacart-order-history-fetch
-brew install instacart-order-history-fetch
+brew tap mike-vincent/instacart-order-history-download
+brew install instacart-order-history-download
 ```
 
 ## How do I get my session cookie?
 
 Get the session cookie from your browser. Log into instacart.com, open DevTools, go to Application → Cookies, and copy the value of `_instacart_session_id`.
 
-## How do I use instacart-order-history-fetch?
+## How do I use instacart-order-history-download?
 
-Run instacart-order-history-fetch with your session cookie:
+Run instacart-order-history-download with your session cookie:
 
 ```
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID"
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID"
 ```
 
 ## Examples
 
 ```
 # Fetch all orders as JSON
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID"
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID"
 
 # Last 6 months as CSV
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID" --months 6 -f csv
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" --months 6 -f csv
 
 # Last 30 days to a file
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID" --days 30 -o orders.json
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" --days 30 -o orders.json
 
 # Since January 2024
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID" --since 2024-01-01
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" --since 2024-01-01
 
 # Human-readable text output
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID" -f text
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" -f text
 
 # Quiet mode (no progress output)
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID" -q > orders.json
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" -q > orders.json
 ```
 
 ## Author
@@ -55,7 +55,7 @@ https://github.com/mike-vincent
 
 ## Source
 
-https://github.com/mike-vincent/instacart-order-history-fetch
+https://github.com/mike-vincent/instacart-order-history-download
 
 ## License
 

@@ -1,13 +1,13 @@
 .TH INSTACART-ORDER-HISTORY-FETCH 1 "January 2026" "1.0.0" "User Commands"
 .SH NAME
-instacart-order-history-fetch \- download Instacart order history
+instacart-order-history-download \- download Instacart order history
 .SH SYNOPSIS
-.B instacart-order-history-fetch
+.B instacart-order-history-download
 .RB \-\-instacart\-session\-id
 .IR SESSION_ID
 .RI [ OPTIONS ]
 .SH DESCRIPTION
-.B instacart-order-history-fetch
+.B instacart-order-history-download
 downloads your Instacart order history and saves it as JSON, CSV, markdown, TSV, or YAML.
 .PP
 Progress is displayed to stderr. Use \fB\-q\fR for quiet mode.
@@ -34,19 +34,19 @@ Show help message and exit.
 Fetch all orders as JSON:
 .PP
 .RS
-instacart-order-history-fetch \-\-instacart\-session\-id "abc123..."
+instacart-order-history-download \-\-instacart\-session\-id "abc123..."
 .RE
 .PP
 Fetch last 10 orders as CSV:
 .PP
 .RS
-instacart-order-history-fetch \-\-instacart\-session\-id "abc123..." \-n 10 \-f csv
+instacart-order-history-download \-\-instacart\-session\-id "abc123..." \-n 10 \-f csv
 .RE
 .PP
 Fetch to file:
 .PP
 .RS
-instacart-order-history-fetch \-\-instacart\-session\-id "abc123..." \-o orders.json
+instacart-order-history-download \-\-instacart\-session\-id "abc123..." \-o orders.json
 .RE
 .SH AUTHENTICATION
 Log into instacart.com, open DevTools, go to Application > Cookies, copy the value of _instacart_session_id.

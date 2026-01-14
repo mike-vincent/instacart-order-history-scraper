@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        mike-vincent instacart-order-history-fetch 1.0.0 v
+github.setup        mike-vincent instacart-order-history-download 1.0.0 v
 revision            0
 
 categories          net python
@@ -26,6 +26,6 @@ use_configure       no
 build {}
 
 destroot {
-    xinstall -m 755 ${worksrcpath}/instacart-order-history-fetch ${destroot}${prefix}/bin/
-    xinstall -m 644 ${worksrcpath}/man/man1/instacart-order-history-fetch.1 ${destroot}${prefix}/share/man/man1/
+    xinstall -m 755 ${worksrcpath}/instacart-order-history-download ${destroot}${prefix}/bin/
+    xinstall -m 644 ${worksrcpath}/man/man1/instacart-order-history-download.1 ${destroot}${prefix}/share/man/man1/
 }

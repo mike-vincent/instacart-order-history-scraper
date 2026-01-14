@@ -1,12 +1,12 @@
-# instacart-order-history-fetch
+# instacart-order-history-download
 
-instacart-order-history-fetch is a command-line tool for downloading your Instacart order history.
+instacart-order-history-download is a command-line tool for downloading your Instacart order history.
 
 ## Install
 
 ```bash
-brew tap mike-vincent/instacart-order-history-fetch
-brew install instacart-order-history-fetch
+brew tap mike-vincent/instacart-order-history-download
+brew install instacart-order-history-download
 ```
 
 ## Get your session cookie
@@ -18,8 +18,8 @@ brew install instacart-order-history-fetch
 ## Usage
 
 ```bash
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID"
-instacart-order-history-fetch --instacart-session-id "YOUR_SESSION_ID" -n 10 -f csv -o orders.csv
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID"
+instacart-order-history-download --instacart-session-id "YOUR_SESSION_ID" -n 10 -f csv -o orders.csv
 ```
 
 ## Options
